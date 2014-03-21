@@ -54,6 +54,57 @@ far more beneficial to communities than if land uses were determined only by mar
   <link rel="stylesheet" href="//openplans.github.io/planbox-themes/illinois-route-53-120-corridor-land-use-plan/custom.css">
 
   <style>
+    .project-nav {
+      font-family: 'Roboto Condensed', Arial, sans-serif;
+      margin-top: 0.75em;
+    }
+    .project-nav a {
+      float: left;
+      padding: 0.25em 0.5em;
+      margin: 0 0.25em 0.25em 0;
+      background-color: #eee;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .project-nav a:hover {
+      background-color: #a3ce62;
+      color: #fff;
+    }
+    .project-details, 
+    .faq, 
+    .project-timeline,
+    .site-colophon {
+      padding-top: 1.25em;
+      position: relative;
+    }
+    .project-details:after, 
+    .faq:after,
+    .project-timeline:after,
+    .site-colophon:after {
+      content: '';
+      width: 0;
+      height: 0;
+      border: 1em solid #fff;
+      border-bottom-color: #ccc;
+      border-left-color: #ccc;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    .project-timeline:after {
+      border-bottom-color: #a3ce62;
+      border-left-color: #a3ce62;
+    }
+    .site-colophon:after {
+      border-bottom-color: #69af4d;
+      border-left-color: #69af4d;
+    }
+    .project-details + .project-details,
+    .faq,
+    .project-timeline,
+    .site-colophon {
+      border-top: 2em solid #fff;
+    }
     .faq {
       font-family: 'Roboto Condensed', Arial, sans-serif;
     }
@@ -74,6 +125,51 @@ far more beneficial to communities than if land uses were determined only by mar
     .faq-list dt.is-selected + dd {
       display: block;
     } 
+    
+    @media only screen and (min-width: 44em) {
+
+      .site-header {
+        padding-top: 5em;
+      }
+      .project-nav {
+        margin-top: 0;
+        padding-top: 0.5em;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        background-color: #fff;
+        z-index: 9999;
+      }
+      .project-nav ul {
+        max-width: 43em;
+        margin: 0 auto;
+      }
+      .project-nav a {
+        color: #a3ce62;
+        background-color: #fff;
+        font-size: 1.25em;
+        line-height: 2em;
+      }
+      .project-nav a:hover {
+        background-color: #eee;
+        color: #69af4d;
+      }
+
+      .project-details + .project-details,
+      .faq,
+      .project-timeline,
+      .site-colophon {
+        border-top: 4em solid #fff;
+      }
+      .project-details:after, 
+      .faq:after, 
+      .project-timeline:after,
+      .site-colophon:after {
+        border-width: 2em;
+      }
+
+    }
   </style>
   
 </head>
@@ -88,19 +184,40 @@ far more beneficial to communities than if land uses were determined only by mar
       <header class="site-header">
         <div class="container">
           <h1 class="site-title">Illinois Route 53/120 Corridor Land Use Plan</h1>
+          <nav class="project-nav clearfix">
+            <ul class="unstyled-list">
+              <li><a href="#about-the-project">About</a></li>
+              <li><a href="#about-the-process">The Process</a></li>
+              <li><a href="#about-the-plan">The Plan</a></li>
+              <li><a href="#benefits">Benefits</a></li>
+              <li><a href="#opportunities">Opportunities</a></li>
+              <li><a href="#timeline">Timeline</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </nav>
         </div>
       </header>
 
-      <section class="project-details">
+      <section class="project-details" id="about-the-project">
         <div class="container">
-          <p class="project-status"><strong>Not Started</strong></p>
-          <p class="project-location"></p>
           <div class="project-description">
             <h3>What's going on?</h3>
             <p>With its population growth significantly exceeding forecasts, Lake County has seen traffic congestion become acute. In 2009, residents approved a non-binding referendum in favor of extending Illinois Route 53 north to Illinois Route 120 -- known as the Illinois Route 53/120 corridor project. In 2010, the region’s award-winning GO TO 2040 comprehensive plan included the project on its highest priority list, citing performance measures that show this facility as “ranking highest among all projects in its effect on regionwide congestion."<br><br>In 2012, the Illinois Route 53/120 <a href="http://www.illinoistollway.com/construction-and-planning/community-outreach/illinois-route-53-120-blue-ribbon-advisory-council">Blue Ribbon Advisory Council</a> recommended creation of a 21st Century urban highway. This modern boulevard would have a smaller footprint to minimize potential negative impacts while protecting the natural environment and preserving the character of Lake County. <br><br>As recommended by the Council, tandem committees have been formed to examine feasibility. The Land Use committee is staffed by CMAP, and the Finance committee is staffed by the Tollway, with Lake County helping to staff both. This document is an overview of the Land Use planning effort. For information about the Finance committee or the Illinois Route 53/120 project in general, click <a href="http://www.illinoistollway.com/construction-and-planning/community-outreach/">here</a>.</p>
+          </div>
+        </div>
+      </section>
+      <section class="project-details" id="about-the-process">
+        <div class="container">
+          <div class="project-description">
             <h3>About the Corridor Land Use Planning Process</h3>
             <p>The Blue Ribbon Advisory Council recommended creation of a corridor plan that integrates land use, transportation, economic development, and open space. As the official planning agency for the seven counties of metropolitan Chicago, CMAP is uniquely qualified to lead the land use planning effort, whose Land Use Committee is co-chaired by Aaron Lawlor (Lake County Board Chairman) and George Ranney (Metropolis Strategies President and CEO), with membership drawn from the leaders of municipalities affected by the facility, the Lake County Board, the county’s economic development interests, and the environmental community. To a significant degree, the extent of collaboration between these stakeholders will determine how quickly the proposed project can become reality.</p>
             <p>This effort will culminate in mid-2015 with a broad land use strategy for the entire corridor, along with specific land use plans for approximately 12 areas that are anticipated to undergo significant change as a result of the facility. The committee will be asked to recommend endorsement of the land use plan by corridor municipalities and Lake County before making a recommendation to the Illinois Tollway Board of Directors on whether the Illinois Route 53/120 facility should proceed.</p>
+          </div>
+        </div>
+      </section>
+      <section class="project-details" id="about-the-plan">
+        <div class="container">
+          <div class="project-description">
             <h3>About the Corridor Land Use Plan</h3>
             <p>The land use plan will consider a planning corridor within the area roughly bound by Lake Cook Road on the south, I-94 on the east, IL 12 on the west, and the Chain O’ Lakes on the north. The Blue Ribbon Advisory Council provided the following specific guidance for development of the land use plan:</p>
             <ul>
@@ -111,10 +228,22 @@ far more beneficial to communities than if land uses were determined only by mar
               <li>Design the land use and transportation system to facilitate walking and biking, transit, increase local connectivity, and manage the increased local road traffic that will likely follow completion of the road and associated new development.</li>
               <li>Develop an integrated open space system that not only includes the protection and restoration of conservation lands, but also meet residents’ and workers’ needs for recreation and open space in the corridor.</li>
             </ul>
+          </div>
+        </div>
+      </section>
+      <section class="project-details" id="benefits">
+        <div class="container">
+          <div class="project-description">
             <h3>Benefits of the Illinois Route 53/120 Corridor Land Use Plan</h3>
             <p>Without adequate prior planning, new roadway development can often bring unwanted results because of a rise in traffic, disruptions to environmental systems, and lack of forethought about desired future land uses. The Corridor Land Use Plan should help ensure that, in addition to relieving congestion, the Illinois Route 53/120 project will integrate and preserve open space and natural areas, increase access to transit, promote effective development, and enhance economic development.</p>
             <p>By reflecting the conscious choices of residents and their elected leaders, the land use plan will achieve results far more beneficial to communities than if land uses were determined only by market forces. The land use plan will protect community assets -- including vital natural resources and quality of life -- and identify opportunities to improve recreation, transit, and economic development. It will balance individual communities’ specific desires with broader strategies for quality of life and economic prosperity in the municipalities, in Lake County, and in the region as a whole.</p>
             <p>Note that this land use planning effort will not decide final alignments for Illinois Route 53/120. The preferred alignment and property impacts will be assessed as part of a future phase.</p>
+          </div>
+        </div>
+      </section>
+      <section class="project-details" id="opportunities">
+        <div class="container">
+          <div class="project-description">
             <h3>Opportunities for Residents to Have Their Say</h3>
             <p>The land use plan process will include a public engagement process specifically designed to engage residents, business owners, and others in a conversation about the corridor land use plan. A number of public workshops will be held in various locations throughout the corridor for the duration of this phase of work. The public will also be invited to provide input through an interactive website.</p>
             <p>In addition to these public events, stakeholders can participate by attending committee meetings, which are open to the public. Up-to-date information about the land use planning process -- including notice of meetings -- is at <a href="http:// www.cmap.illinois.gov/programs-and-resources/lta/il-53-120">http:// www.cmap.illinois.gov/programs-and-resources/lta/il-53-120</a>. To stay informed via email updates, contact <a href="http://mailto://ecosky@metrostrategiesinc.com">Elli Cosky</a>.</p>
@@ -122,8 +251,9 @@ far more beneficial to communities than if land uses were determined only by mar
         </div>
       </section>
 
-      <section class="project-timeline">
+      <section class="project-timeline" id="timeline">
         <div class="container">
+          <h3></h3>
           <ol class="event-list unstyled-list">
             <li class="event"><h1 class="event-title">Outreach &amp; Education</h1><div class="event-description"><br><b>Starting February 2014</b><br><br>During this phase<ul><li>Coordination with municipalities<br></li><li>Key stakeholder interviews<br></li><li>Stakeholder focus groups<br></li><li>Interactive web presence</li><li>Workshops at key milestones<br></li><li>Potential for “pop-up” and/or educational meetings for specific issues or&nbsp;opportunities</li></ul><br></div></li>
             <li class="event"><h1 class="event-title">Land Use Committee Meeting</h1><div class="event-description"><br><b>March 18th, 2014</b><br>Held at University Center of Lake County, 1200 University Center Drive, Grayslake.<br><br><a href="https://dl.dropboxusercontent.com/s/qismxpufoy3b84z/53-120-LUC01-02Presentation.pdf">View the slideshow</a>&nbsp;from the meeting. Other meeting documents:<br><ul><li><a href="https://dl.dropboxusercontent.com/s/82xmu8040e3b9fu/53-120-LUC01-01Agenda.pdf">Agenda</a></li><li><a href="https://dl.dropboxusercontent.com/s/zacnucd22z98hze/53-120-LUC01-03Membership.pdf">Committee Members</a></li><li><a href="https://dl.dropboxusercontent.com/s/kq4ciwem6er54e2/53-120-LUC01-04CoChairs.pdf">Committee Co-Chairs</a><br></li><li><a href="https://dl.dropboxusercontent.com/s/4gqjbrnruxaammm/53-120-LUC01-05Disclosure.pdf">Disclosure</a><br></li><li><a href="https://dl.dropboxusercontent.com/s/4sbo9yabw78nwqw/53-120-LUC01-06Stakeholders.pdf">Stakeholder Worksheet</a><br></li><li><a href="https://dl.dropboxusercontent.com/s/r6vbfbg15wqo8ol/53-120-LUC01-08BRACsummary.pdf">Blue Ribbon Advisory Council Report Summary</a><br></li><li><a href="https://dl.dropboxusercontent.com/s/dehsmquagmk6bdd/53-120-LUC01-09Process.pdf">Proposed Process</a><br></li><li><a href="https://dl.dropboxusercontent.com/s/6s4gpye6imcazl0/53-120-LUC01-10ProjectOverview.pdf">Project Overview</a><br></li><li><a href="https://dl.dropboxusercontent.com/s/6s4gpye6imcazl0/53-120-LUC01-10ProjectOverview.pdfhttps://dl.dropboxusercontent.com/s/f19j07kefb7v4ux/53-120-LUC01-11FAQ.pdf">Frequently Asked Questions</a></li></ul><br></div></li>
@@ -136,7 +266,7 @@ far more beneficial to communities than if land uses were determined only by mar
       </section>
 
 
-      <section class="faq">
+      <section class="faq" id="faq">
         <div class="container">
           <h3>Frequently Asked Questions</h3>
           <dl class="faq-list">
