@@ -54,6 +54,14 @@ far more beneficial to communities than if land uses were determined only by mar
   <link rel="stylesheet" href="//openplans.github.io/planbox-themes/illinois-route-53-120-corridor-land-use-plan/custom.css">
 
   <style>
+    .site-header {
+      background-image: url(wetlands.jpg);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding-top: 4em;
+      padding-bottom: 1em;
+    }
     .project-nav {
       font-family: 'Roboto Condensed', Arial, sans-serif;
       margin-top: 0.75em;
@@ -76,6 +84,7 @@ far more beneficial to communities than if land uses were determined only by mar
     .site-colophon {
       padding-top: 1.25em;
       position: relative;
+      border-top: 2em solid #fff;
     }
     .project-details:after, 
     .faq:after,
@@ -98,12 +107,6 @@ far more beneficial to communities than if land uses were determined only by mar
     .site-colophon:after {
       border-bottom-color: #69af4d;
       border-left-color: #69af4d;
-    }
-    .project-details + .project-details,
-    .faq,
-    .project-timeline,
-    .site-colophon {
-      border-top: 2em solid #fff;
     }
     .faq {
       font-family: 'Roboto Condensed', Arial, sans-serif;
@@ -129,7 +132,11 @@ far more beneficial to communities than if land uses were determined only by mar
     @media only screen and (min-width: 44em) {
 
       .site-header {
-        padding-top: 5em;
+        padding-top: 10%;
+        padding-bottom: 12%;
+        position: relative;
+        top: 2em;
+        z-index: 500;
       }
       .project-nav {
         margin-top: 0;
@@ -156,7 +163,7 @@ far more beneficial to communities than if land uses were determined only by mar
         color: #69af4d;
       }
 
-      .project-details + .project-details,
+      .project-details,
       .faq,
       .project-timeline,
       .site-colophon {
