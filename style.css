@@ -956,6 +956,7 @@ a.attachment-link:hover .attachment-description {
 /* Project Footer */
 .project-contact-info {
   position: relative;
+  font-size: 1.5em;
 }
 
 /* FAQs Section */
