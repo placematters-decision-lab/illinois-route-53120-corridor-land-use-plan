@@ -39,12 +39,13 @@
   <!-- Google Web Fonts -->
   <link href="//fonts.googleapis.com/css?family=Alegreya+Sans:100,400,800,400italic,800italic,100italic" rel="stylesheet" type="text/css">
 
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css" type="text/css" media="screen, projection">
   <link rel="stylesheet" href="style.css" type="text/css" media="screen, projection">
   <link rel="stylesheet" href="//openplans.github.io/planbox-themes/illinois-route-53-120-corridor-land-use-plan/custom.css">
 
   <style>
-    
+
    .site-header {
       background-image: url(wetlands.jpg);
       background-position: center center;
@@ -53,8 +54,8 @@
       padding-top: 4em;
       padding-bottom: 1em;
     }
-      
-      
+
+
     .site-header .container {
       background-color: transparent;
       border-color: transparent;
@@ -89,7 +90,7 @@
       position: relative;
       border-top: 2em solid #fff;
     }
-    
+
     .project-sidebar {
       float: right;
       width: 10em;
@@ -165,6 +166,17 @@
         left: 0;
         width: 100%;
         height: 100%;
+    }
+
+    .legend {
+      position: absolute;
+      bottom: 1em;
+      left: 1em;
+      z-index: 999;
+
+      padding: 0.5em;
+      background-color: white;
+      border: 1px solid #cecece;
     }
 
     @media only screen and (min-width: 44em) {
@@ -253,7 +265,7 @@
       </div>
             </section>
 
-      <!-- info box about July 21st meeting -->      
+      <!-- info box about July 21st meeting -->
       <section class="project-timeline">
         <div class="container">
           <div class="project-contact-info">
@@ -276,14 +288,14 @@
             <!-- <div class="project-sidebar">This is a side bar.</div> -->
             <p>The Blue Ribbon Advisory Council recommended creation of a corridor plan that integrates land use, transportation, economic development, and open space. As the official planning agency for the seven counties of metropolitan Chicago, CMAP is uniquely qualified to lead the land use planning effort, whose Land Use Committee is co-chaired by Aaron Lawlor (Lake County Board Chairman) and George Ranney (Metropolis Strategies President and CEO), with membership drawn from the leaders of municipalities affected by the facility, the Lake County Board, the county’s economic development interests, and the environmental community. To a significant degree, the extent of collaboration between these stakeholders will determine how quickly the proposed project can become reality.</p>
             <p>This effort will culminate in mid-2015 with a broad land use strategy for the entire corridor, along with specific land use plans for approximately 12 areas that are anticipated to undergo significant change as a result of the facility. The committee will be asked to recommend endorsement of the land use plan by corridor municipalities and Lake County before making a recommendation to the Illinois Tollway Board of Directors on whether the Illinois Route 53/120 facility should proceed.</p>
-            
+
             <h4><a id="why-plan" style="position: relative; top: -100px; float: left;"></a>Collaborative corridor planning for efficient land use and transportation</h4>
             <p>When communities plan in isolation -- or not at all -- they miss the considerable benefits of planning in collaboration with their neighbors.  A better approach is to consider "corridors" that integrate land use and transportation for improved mobility, quality of life, natural resource protection, and sustainable economic development.</p>
 
             <p>The Chicago Metropolitan Agency for Planning (CMAP) is working with Lake County and communities in the corridor along a future Illinois Route 53 and Illinois Route 120, as recommended by a Blue Ribbon Advisory Council of the Illinois Tollway.  This corridor planning process is engaging municipalities to plan for the potential market-driven development that can result from such a major transportation infrastructure investment, as well as the potential impact on quality of life and the environment.</p>
-            
+
             <div class="video-container">
-               <iframe width="560" height="315" src="//www.youtube.com/embed/UJ95rahKbx8" frameborder="0" allowfullscreen></iframe> 
+               <iframe width="560" height="315" src="//www.youtube.com/embed/UJ95rahKbx8" frameborder="0" allowfullscreen></iframe>
             </div>
 
             <p>This animation depicts the potential results when three neighboring communities do not plan collaboratively. They are intersected by a major highway that brings increased traffic congestion, disinvestment in existing towns, and depletion of natural resources. Infrastructure costs more but is less efficient and effective. Each community's character changes in unpredictable and often unpleasant ways.</p>
@@ -312,7 +324,16 @@
             <p>The land use plan will consider a planning corridor within the area roughly bound by Lake Cook Road on the south, I-94 on the east, IL 12 on the west, and the Chain O’ Lakes on the north.</p>
             <!-- <p><a href="https://dl.dropbox.com/s/rjfx6a24d5f62sc/20140530%20-%20EXHIBIT%20X%20BNDRY_%20MAP.pdf"><img src="https://dl.dropboxusercontent.com/s/e2dnog17gbl2rxq/20140530%20-%20EXHIBIT%20X%20BNDRY%20MAP_%20thumbnail_1.jpg"></a></p> -->
             <small style="display:block;text-align:right;"><a href="https://dl.dropbox.com/s/rjfx6a24d5f62sc/20140530%20-%20EXHIBIT%20X%20BNDRY_%20MAP.pdf">PDF map</a></small>
-            <iframe width='100%' height='500px' frameBorder='0' style='box-shadow:0 0 0 1px #ccc;margin-bottom: 1.5em;' src='https://a.tiles.mapbox.com/v4/openplans.159_CMAP/attribution,zoompan,geocoder,legend,share.html?access_token=pk.eyJ1Ijoib3BlbnBsYW5zIiwiYSI6ImZRQzRPYnMifQ.f75KI3Q9rFXRY2Zciz6DKw#11/42.2766/-88.0248'></iframe>
+            <iframe width='100%' height='500px' frameBorder='0' style='box-shadow:0 0 0 1px #ccc;margin-bottom: 1.5em;' src='https://a.tiles.mapbox.com/v4/openplans.159_CMAP/attribution,zoompan,legend.html?access_token=pk.eyJ1Ijoib3BlbnBsYW5zIiwiYSI6ImZRQzRPYnMifQ.f75KI3Q9rFXRY2Zciz6DKw#11/42.2766/-88.0248'></iframe>
+
+
+            <div id="dev-hotspots-map" style="width:100%; height:500px;">
+
+
+              <div class="legend"><img src="hotspot-legend.png"></div>
+            </div>
+
+
             <p>The Blue Ribbon Advisory Council provided the following specific guidance for development of the land use plan:</p>
             <ul style="float:right;">
               <li>Utilize a market-driven approach to assess the feasibility of future land use change, including analysis of employment trends, potential commercial and industrial development, and the housing mix that is likely to occur if the proposed Route 53/120 is built.</li>
@@ -368,13 +389,13 @@
             <li>CMAP report, <a href="http://www.cmap.illinois.gov/economy/tax-policy/economic-development-incentives">Examination of Local Economic Development Incentives in Northeastern Illinois</a>, analyzing how local governments use incentives to attract or retain businesses such as retail stores, auto dealerships, corporate offices, and manufacturing or warehousing industries or encourage the redevelopment of underutilized sites and the construction of affordable housing and mixed-use development.</li>
             <a id="June2"></a><li>CMAP report, <a href="http://www.cmap.illinois.gov/economy/tax-policy/Impacts-of-Local-Development-Decisions">Fiscal and Economic Impact Analysis of Local Development Decisions</a>, a case-study analysis of the fiscal impacts of 31 developments in 10 of the region's communities, as well as an assessment of regional economic and market impacts. The focus of this report is on municipal fiscal impacts, although some analysis of other districts is provided.</li>
             </ul>
-            
+
             <p></p>
             <p><strong>June 2nd Update</strong></br>Following the May 8th Land Use Committee meeting, the consultant team has refined the Study Area Boundary to incorporate suggestions made by the Committee.</p>
             <p>An exhibit showing the final Study Area Boundary is shown below.  A higher resolution version of the exhibit <a href="https://dl.dropbox.com/s/rjfx6a24d5f62sc/20140530%20-%20EXHIBIT%20X%20BNDRY_%20MAP.pdf">can be downloaded here</a>. Using the new Study Area Boundary, the consultant team is completing  mapping and analysis of existing land use, market, environment and transportation conditions for the Existing Conditions Assessment.</p>
             <p><a href="https://dl.dropbox.com/s/rjfx6a24d5f62sc/20140530%20-%20EXHIBIT%20X%20BNDRY_%20MAP.pdf"><img src="https://dl.dropboxusercontent.com/s/e2dnog17gbl2rxq/20140530%20-%20EXHIBIT%20X%20BNDRY%20MAP_%20thumbnail_1.jpg"></a></p>
             </div></li>
-            
+
             <!-- LUC meeting #3 -->
             <li class="event"><h1 class="event-title"><a id="july-21-2014" style="position: relative; top: -100px; float: left;"></a>Land Use Committee Meeting #3</h1>
               <div class="event-description">
@@ -386,7 +407,7 @@
             <li><a href="https://dl.dropbox.com/s/utj92hkgq7zrz34/ECA%20Preliminary%20Key_%20Findings.pdf">Existing Conditions Assessment - Preliminary Key Findings</a></li>
             </ul>
             </div></li>
-            
+
             <!-- existing conditions assessment -->
             <li class="event"><h1 class="event-title">Existing Conditions Assessment</h1><div class="event-description"><br><b>March 2014 through September 2014</b><br><br>During this phase:<ul><li>Build on <a href="http://www.illinoistollway.com/construction-and-planning/community-outreach/illinois-route-53-120-blue-ribbon-advisory-council">BRAC</a> process and results<br></li><li>Establish market, environment, land use, and transportation baseline<br></li><li>Identify natural and political limits on development<br></li><li>Identify hotspots - areas of potential significant land use change<br></li><li>Frame future detailed analyses<br></li><li>Conduct corridor workshops</li></ul><br></div></li>
             <li class="event"><h1 class="event-title">Detailed Analyses</h1><div class="event-description"><br><b>September 2014 through January 2015</b><br><br>Activities include:<ul><li>Analyze market, environment, land use, and transportation<br></li><li>Prepare &amp; test alternative land use scenarios for corridor and hotspots<br></li><li>Develop environmental enhancement concepts and strategies<br></li><li>Conduct corridor workshops<br></li></ul></div></li>
@@ -508,13 +529,43 @@
     </div>
   </div><!-- end #site-wrapper -->
 
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script>
-    $( document ).ready(function() {
+    $(document).ready(function() {
       $( ".faq-list dt" ).click(function(e) {
         $(this).toggleClass('is-selected');
         e.preventDefault();
       });
+
+      // construct the map object
+      //   - set the initial center and zoom level
+      var hotspotMap = L.map('dev-hotspots-map', {
+            zoom: 11,
+            center: [42.3276, -88.0376],
+            scrollWheelZoom: false
+          }),
+          marketLayer = L.tileLayer('http://{s}.tiles.mapbox.com/v3/openplans.159_HotSpot_Market/{z}/{x}/{y}.png'),
+          municipalLayer = L.tileLayer('http://{s}.tiles.mapbox.com/v3/openplans.159_HotSpot_Muni/{z}/{x}/{y}.png'),
+          policyLayer = L.tileLayer('http://{s}.tiles.mapbox.com/v3/openplans.159_HotSpot_Policy/{z}/{x}/{y}.png'),
+          sumLayer = L.tileLayer('http://{s}.tiles.mapbox.com/v3/openplans.159_HotSpot_Sum/{z}/{x}/{y}.png');
+
+      // added the base layer
+      hotspotMap.addLayer(L.tileLayer('http://{s}.tiles.mapbox.com/v3/openplans.map-g4j0dszr/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
+      }));
+
+      // add our 4 layers to the map, with one visible by default
+      hotspotMap.addLayer(marketLayer);
+
+      // setup layer toggling so that we can switch between them
+      L.control.layers({
+        'Market Factors': marketLayer,
+        'Municipal Factors': municipalLayer,
+        'Policy Factors': policyLayer,
+        'All Factors': sumLayer
+      }).addTo(hotspotMap);
+
     });
   </script>
 
