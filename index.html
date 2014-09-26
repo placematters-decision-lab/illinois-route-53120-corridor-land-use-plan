@@ -167,6 +167,14 @@
         height: 100%;
     }
 
+    .event-title {
+      cursor: pointer;
+      display: inline;
+    }
+    .event-description {
+      display: none;
+    }
+
     @media only screen and (min-width: 44em) {
 
       .site-header {
@@ -511,10 +519,16 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script>
     $( document ).ready(function() {
-      $( ".faq-list dt" ).click(function(e) {
+
+      $('.faq-list dt').click(function(e) {
         $(this).toggleClass('is-selected');
         e.preventDefault();
       });
+
+      $('.event-title').click(function(){
+        $(this).siblings('.event-description').toggle('fast');
+      });
+
     });
   </script>
 
