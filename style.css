@@ -1335,13 +1335,21 @@ div.faq {
   .container.wide {
     max-width: 85%;
   }
-  .column-a {
+  .column-25l {
     float: left;
-    width: 33%;
+    width: 25%;
   }
-  .column-b {
+  .column-70r {
     float: right;
-    width: 62%;
+    width: 70%;
+  }
+  .column-58l {
+    float: left;
+    width: 58%;
+  }
+  .column-38r {
+    float: right;
+    width: 38%;
   }
 
   .hide-for-small {
